@@ -1,1 +1,4 @@
 начинаю провкерку discard
+discard OK!
+
+начинаю провкерку revert
