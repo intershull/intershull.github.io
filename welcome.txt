@@ -1,2 +1,2 @@
 print("Приветствую третий урок!");
-print("what's up?");
+print("what's up хрен?");
