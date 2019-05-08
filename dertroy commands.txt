@@ -2,3 +2,7 @@
 discard OK!
 
 начинаю провкерку revert
+revert OK!
+
+начинаю провкерку reset
+шаг1
