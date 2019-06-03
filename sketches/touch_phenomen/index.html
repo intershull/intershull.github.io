@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>тач-события</title>
+    <style>
+        
+        .desktop{
+            border: solid black 1px;
+            height: 4em;
+            margin: 1em;
+                }
+        .mobile{
+            border: solid black 1px;
+            height: 4em;
+            margin: 1em;
+                }
+        .result{
+            border: solid black 1px;
+            padding: 1em;
+            margin: 1em;
+                }
+        
+        /*@media (max-device-width: 870px){
+            *{font-family: Franklin Gothic;
+        font-size: 2.5em;}
+        }*/
+    </style>
+
+    <!--
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+-->
+
+<!--увы, более современные версии jquery несовместимы с jquery mobile-->
+<script src="jquery-1.12.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script>
+    $(function(){
+        
+        $(".desktop").click(function(){
+            $(this).append("click! ");
+            $(".result").append("click!<br>");
+        });
+        
+        
+        $(".mobile").on("tap",function(){
+            $(this).append("tap! ");
+            $(".result").append("tap!<br>");
+        });
+        
+    });
+    </script>
+</head>
+<body>
+
+<div data-role="header">kfihvb izdfh</div>
+
+<div data-role="main">
+    <div class="desktop">десктоп-событие (мышка)<br></div>
+    <div class="mobile">мобайл-событие (палец)<br></div>
+    <div class="result"></div>
+</div>
+
+</body>
+</html>
