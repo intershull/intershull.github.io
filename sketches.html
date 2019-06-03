@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>веб-программирование</title>
-    <style></style>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/index.css">
+<meta charset="UTF-8">
+<title>веб-программирование</title>
+<style>
+@media (max-device-width: 870px){
+    a, a:hover, a:link{
+        background-color: lightblue;
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 1em;
+        margin: 3em 1em 3em 1em;}
+}
+
+@media (min-device-width: 871px){
+    body{width: 800px;margin: 0 auto;}
+    a, a:hover, a:link{
+        background-color: lightblue;
+        border: solid black 2px;
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 1em;
+        margin: 3em 1em 3em 1em;}
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>наброски</h1>
-    </header>
-        <p>
-        табличка текущих параметров браузера
-        <a href="sketches/browser_parameters">тыц</a>
-        </p>
-        
-        <p>
-        Компактный механизм изменения всей цветовой палитры сайта (на всякий случай)
-        <a href="sketches/change_colors">тыц</a>
-        </p>
+<header><h1>наброски</h1></header>
 
-        <p>
-        универсальная адаптивная плашка на CSS GRID (Балкан.ру)
-        <a href="sketches/universal_plate_cssgrid">тыц</a>
-        </p>
-        
-        <p>
-        При запуске на мобильнике покажет разницу между click и tap. Показывать начальству для понимания необходимости адаптивности.
-        <a href="sketches/touch_phenomen">тыц</a>
-        </p>
+<a href="sketches/browser_parameters">табличка текущих параметров браузера</a>
+  
+<a href="sketches/change_colors">Компактный механизм изменения всей цветовой палитры сайта (на всякий случай)</a>
+
+<a href="sketches/universal_plate_cssgrid">универсальная адаптивная плашка на CSS GRID (Балкан.ру)</a>
+
+<a href="sketches/touch_phenomen">При запуске на мобильнике покажет разницу между click и tap. Показывать начальству для понимания необходимости адаптивности.</a>
+
 </body>
 </html>
