@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shull.ru</title>
+        <script src="../jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+
+<!--Главная колонка с блогом-->
+<div class="blog">
+    <!--Тут импорт из Твиттера. JS подставляет его по адаптивности.-->
+    <h1>Параметры вашего браузера</h1>
+    <div class="demo">
+    
+    </div>
+</div>
+
+
+
+<script>
+$(function(){
+    
+var browser_width=$(window).width();//Ширина браузера
+var browser_height=$(window).height();//Высота браузера
+var device_width=screen.width;//Ширина устройства
+var device_height=screen.height;//Высота устройства
+var browser_orientation; //Ориентация браузера
+if(browser_width>browser_height){browser_orientation="альбом";}
+else{browser_orientation="книга";}
+var device_orientation; //Ориентация устройства
+if(device_width>device_height){device_orientation="альбом";}
+else{device_orientation="книга";}
+
+$(".demo").append("<br>Ширина браузера (width) - "+browser_width+"<br>");
+$(".demo").append("Высота браузера (height) - "+browser_height+"<br><br>");
+$(".demo").append("Общая ширина экрана (device_width)- "+screen.width+"<br>");
+$(".demo").append("Общая ширина экрана (device_height)- "+screen.height+"<br><br>");
+$(".demo").append("Ориентация браузера - "+browser_orientation+"<br>");
+$(".demo").append("Ориентация устройства - "+device_orientation+"<br><br>");
+
+});
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
