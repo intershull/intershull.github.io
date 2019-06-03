@@ -1,0 +1,108 @@
+/*десктоп-дизайн*/
+@media (min-device-width: 871px){
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 960px;
+    margin: 5em auto;
+}
+
+    /*габариты и параметры*/
+body{border: solid black 2px; border-radius: 1em}
+body *{box-sizing: border-box;}
+header{width: 100%;height: 5em;}
+    header h1{margin-left: 2em;}
+div#button{display: none;}
+    nav a{display: block; margin: 2em 1em;}
+div#gallery{width: 360px;}
+div#gallery a{display: block; width: 50%; float: left}
+    div#gallery a img{display: block;margin: 2em auto;}
+section#articles{width: 400px;}
+section#articles a{display: block;margin: 1em;}
+
+    /*цвета*/
+
+    /*шрифты*/
+header h1{font-family: monospace}
+nav a{font-family: sans-serif;font-size: 0.9em; text-decoration: none;color: black;font-weight: 600}
+section#articles a{color: black;font-family: sans-serif;text-decoration: none}
+  
+}
+
+
+/*мобильный дизайн*/
+@media (max-device-width: 870px){
+
+    /*габариты и параметры*/
+    body{width: 100%;margin: 0px;}
+    header{height: 25vw;width: 75vw;box-sizing: border-box;float: left;}
+    div#button{float: left}
+        header h1{margin-left: 1em;margin-top: 1.5em}
+    nav{display: none; clear: both;box-sizing: border-box; margin: 1em;}/*скрыто, если не нажата кнопка меню*/
+        nav a{display: block; width: 50%;height: 5em;float: left;text-align: center;line-height: 4em;}
+    div#gallery a{display: block; width: 50%; float: left}
+    div#gallery a img{display: block;margin: 7em auto;width: 50%;}
+    section#articles{float: left;margin: 1.5em}
+    
+    /*цвета*/
+    html{}
+    body{background-color: steelblue}
+    header{background-color: steelblue}
+    div#gallery a{background-color: steelblue;}
+    div#gallery a img{filter: invert(100%);}
+    section#articles{background-color: steelblue}
+    
+    /*внешний вид кнопки (три полосы)*/
+    div#button{
+        background-color: red;
+        width: 25vw;height: 25vw;
+            background-image: linear-gradient(
+        to bottom,
+        steelblue 20%,
+        white 20%,
+        white 30%,
+        steelblue 30%,
+        steelblue 45%,
+        white 45%,
+        white 55%,
+        steelblue 55%,
+        steelblue 70%,
+        white 70%,
+        white 80%,
+        steelblue 80%,
+        steelblue 100%
+    );
+    box-sizing: border-box;
+    border-left: solid steelblue 3vw;
+    border-right: solid steelblue 3vw;
+    }
+
+    
+
+    /*шрифты*/
+header h1{font-size: 4em; font-family: monospace;color: white}
+    nav a{text-decoration: none;font-family: sans-serif;color: white;font-size: 2.5em;}
+section#articles a{text-decoration: none;font-family: sans-serif;color: white;line-height: 1em}
+section#articles h2{margin-top: 1.5em}
+
+    /*параметры надписи "&#8592; вернуться на главную страницу"
+    они подогнаны в соответствии с габаритами кнопки и полосок на ней
+    */
+    .attention{
+        float: left;
+        width: 72vw;
+        height: 25vw;
+        box-sizing: border-box;
+        line-height: 25vw;
+        /*шрифты*/
+        font-size: 3em;
+        font-family: sans-serif;
+        color: white;
+    }
+
+    
+}
+
+
