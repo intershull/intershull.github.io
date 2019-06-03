@@ -1,0 +1,58 @@
+/*общее*/
+html{width: 100%;height: 100%;}
+body{font-family: 'Roboto', sans-serif;}
+
+
+
+/*контакты наверху*/
+.upper_contacts{
+    background-color: #f1f1f1;
+    color: DimGrey;
+    border-bottom: solid gray 1px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+/*слоган*/
+.header {margin-bottom: 2em;}
+.header span{color: #ff4646;}
+
+
+/*навигация*/
+.navigation{background-color: #ff4646;margin-bottom: 1em;}
+.search *{margin-bottom: 1em;margin-top: 1em}
+.menu div{margin-bottom: 1em;margin-top: 1em}
+.menu, .search{color:white;}
+.btn{color:darkred;}
+
+/*поиск*/
+.search{}
+
+
+/*фото и приветствие*/
+.main{border-top: solid gray 1px;padding-top: 1em;margin-bottom: 2em}
+
+
+/*отзывы*/
+.reviews .h4{border-bottom: solid gray 1px;
+            line-height: 150%;
+            color: #ff4646;
+}
+.reviews{border-bottom: solid gray 1px;padding-bottom: 4em}
+
+
+/*блог .blog, контакты внизу .bottom_contacts, о себе .about_me*/
+.bottom .h3{font-style: italic;}
+.bottom .h4{color: #ff4646;}
+.bottom_contacts span{color: #ff4646;}
+
+
+/*отзывы*/
+.footer{background-color: #838383;
+    color: white;}
+.footer div{margin-bottom: 1em;margin-top: 1em}
+
+
+
+
