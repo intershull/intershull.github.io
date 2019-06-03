@@ -1,0 +1,136 @@
+﻿/*
+---Генерация палитры сайта---
+Наша задача - сгенерировать все цвета (в нашей палитре 2 цвета по 4 оттенка) из одного единственного цвета.
+Создаём эталонный синий цвет (steelblue) в формате HSL. Это hsl(207, 44%, 49%).
+Для этого нам нужно смешать Hue(тон), Saturation(насыщенность), Lightness(свет) в нужных пропорциях.
+После этого, на его базе, создаём три дополнительных цвета - тёмный, светлый и очень светлый.
+*/
+:root{
+    --hue: 207;/*именно этот показатель (207) надо поменять, если хочешь поменять цветовую гамму сайта*/
+    --saturation: 44%;
+    --lightness: 49%;
+    --steelblue: hsl(var(--hue),var(--saturation),var(--lightness));
+    
+    /*    теперь создадим оттенок потемнее: за основу берём цвет шрифта hsl(207, 67%, 27%);    */
+    --dark_steelblue: hsl(
+        var(--hue),
+        calc(var(--saturation) + 23%),
+        calc(var(--lightness) - 22%)
+        );
+    
+    /*    светлый оттенок hsl(207, 57%, 76%);    */
+    --light_steelblue: hsl(
+        var(--hue),
+        calc(var(--saturation) + 13%),
+        calc(var(--lightness) + 27%)
+        );
+    
+    /*    суперсветлый оттенок hsl(207, 56%, 84%);    */
+    --highlight_steelblue: hsl(
+        var(--hue),
+        calc(var(--saturation) + 16%),
+        calc(var(--lightness) + 35%)
+        );
+    
+    /*Теперь создаём один основной оранжевый цвет (hsl(33, 100%, 50%) и три дополнительных. Тут придётся менять не только насыщенность и свет, но и Hue (тон).*/
+    --darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56%),
+        calc(var(--lightness) + 1%)
+    );
+    
+    --dark_darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56% + 23%),
+        calc(var(--lightness) + 1% - 22%)
+    );
+    
+    /*    светлый оттенок hsl(207, 57%, 76%);    */
+    --light_darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56% + 13%),
+        calc(var(--lightness) + 1% + 27%)
+    );
+    
+    /*    суперсветлый оттенок hsl(207, 56%, 84%);    */
+    --highlight_darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56% + 16%),
+        calc(var(--lightness) + 1% + 35%)
+    );
+}
+/*
+1) var(--steelblue) steelblue - steelblue
+2) var(--dark_steelblue) #174a75 - темный steelblue
+3) var(--light_steelblue) #9fc4e5 - светлый steelblue
+4) var(--highlight_steelblue) #c0d8ed - очень светлый steelblue
+5) var(--darkorange) darkorange - darkorange
+6) var(--dark_darkorange) #8f4f00 - темный darkorange
+7) var(--light_darkorange) #ffca8a - светлый darkorange
+8) var(--highlight_darkorange) #ffddb3 - очень светлый darkorange
+*/
+
+
+/*габариты (FLEX-модель)*/
+.standart, .variation{display: flex;}
+.standart div, .variation div{flex:1;}
+
+
+/*габариты (FLEX-модель)*/
+.standart div, .variation div{height: 6em;}
+.control{margin: 1em;}
+.control{padding: 1em;}
+.control form{padding: 1em;}
+/*свойства*/
+.control{border: solid black 2px;}
+
+
+
+
+/*цвета*/
+.standart div:nth-child(1){background-color: steelblue;}
+.standart div:nth-child(2){background-color: #174a75;}
+.standart div:nth-child(3){background-color: #9fc4e5;}
+.standart div:nth-child(4){background-color: #c0d8ed;}
+.standart div:nth-child(5){background-color: darkorange;}
+.standart div:nth-child(6){background-color: #8f4f00;}
+.standart div:nth-child(7){background-color: #ffca8a;}
+.standart div:nth-child(8){background-color: #ffddb3;}
+
+.variation div:nth-child(1){
+    background-color: var(--steelblue);
+}
+
+.variation div:nth-child(2){
+    background-color: var(--dark_steelblue);
+}
+
+.variation div:nth-child(3){
+    background-color: var(--light_steelblue);
+}
+
+.variation div:nth-child(4){
+    background-color: var(--highlight_steelblue);
+}
+
+.variation div:nth-child(5){
+    background-color: var(--darkorange);
+}
+
+.variation div:nth-child(6){
+    background-color: var(--dark_darkorange);
+}
+
+.variation div:nth-child(7){
+    background-color: var(--light_darkorange);
+}
+
+.variation div:nth-child(8){
+    background-color: var(--highlight_darkorange);
+}
+
+
+
+
+
+

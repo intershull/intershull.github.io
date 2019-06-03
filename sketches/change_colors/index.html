@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="exp.css">
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+
+<div class="standart">
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+</div>
+
+
+<div class="variation">
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+</div>
+
+<div class="control">
+Тут создана цветовая гамма из одного единственного цвета.
+<br>Это было сделано с помощью CSS-переменных.
+<br>Измени значение переменной - и изменится вся цветовая гамма!
+<br>P.S.: Тут даётся значение "Hue" в формате HSL, диапазон - от 0&#176; до 360&#176; (классический цветовой круг)
+
+
+
+
+<form class="s_form">
+    <input type="text" name="name" placeholder="введите от 0 до 360...">
+    <input class="s_submit" type="button" value="Подтвердить">
+</form>
+
+
+
+
+
+<script>
+$(function(){
+    
+
+
+
+
+ $('.s_submit').on('click', function () {
+     
+     /*ловим данные формы в переменную*/
+     var form = this.form;
+     
+     /*значение hue (по умолчанию это 207)*/
+     new_hue=form.name.value;
+     
+     /*создание дополнительного CSS с новым значением*/
+     var new_style="<style>:root{--hue: "+new_hue+";}</style>";
+     
+     /*вставка CSS после основного кода странички*/
+     $("body").append(new_style);
+ });
+
+
+  
+
+    
+    
+    
+});
+</script>
+
+
+
+
+</div>
+
+  
+<!--
+1) var(--_steelblue) steelblue - steelblue
+2) var(--dark_steelblue) #174a75 - темный steelblue
+3) var(--light_steelblue) #9fc4e5 - светлый steelblue
+4) var(--highlight_steelblue) #c0d8ed - очень светлый steelblue
+5) var(--darkorange) darkorange - darkorange
+6) var(--dark_darkorange) #8f4f00 - темный darkorange
+7) var(--light_darkorange) #ffca8a - светлый darkorange
+8) var(--highlight_darkorange) #ffddb3 - очень светлый darkorange
+-->
+
+
+
+</body>
+</html>
