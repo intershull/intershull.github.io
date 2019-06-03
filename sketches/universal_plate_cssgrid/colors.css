@@ -1,0 +1,73 @@
+﻿/*
+---Генерация палитры сайта---
+Наша задача - сгенерировать все цвета (в нашей палитре 2 цвета по 4 оттенка) из одного единственного цвета.
+Создаём эталонный синий цвет (steelblue) в формате HSL. Это hsl(207, 44%, 49%).
+Для этого нам нужно смешать Hue(тон), Saturation(насыщенность), Lightness(свет) в нужных пропорциях.
+После этого, на его базе, создаём три дополнительных цвета - тёмный, светлый и очень светлый.
+*/
+:root{
+    --hue: 207;/*именно этот показатель надо поменять, если хочешь поменять цветовую гамму сайта*/
+    --saturation: 44%;
+    --lightness: 49%;
+    --steelblue: hsl(var(--hue),var(--saturation),var(--lightness));
+    
+    /*    теперь создадим оттенок потемнее: за основу берём цвет шрифта hsl(207, 67%, 27%);    */
+    --dark_steelblue: hsl(
+        var(--hue),
+        calc(var(--saturation) + 23%),
+        calc(var(--lightness) - 22%)
+        );
+    
+    /*    светлый оттенок hsl(207, 57%, 76%);    */
+    --light_steelblue: hsl(
+        var(--hue),
+        calc(var(--saturation) + 13%),
+        calc(var(--lightness) + 27%)
+        );
+    
+    /*    суперсветлый оттенок hsl(207, 56%, 84%);    */
+    --highlight_steelblue: hsl(
+        var(--hue),
+        calc(var(--saturation) + 16%),
+        calc(var(--lightness) + 35%)
+        );
+    
+    /*Теперь создаём один основной оранжевый цвет (hsl(33, 100%, 50%) и три дополнительных. Тут придётся менять не только насыщенность и свет, но и Hue (тон).*/
+    --darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56%),
+        calc(var(--lightness) + 1%)
+    );
+    
+    --dark_darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56% + 23%),
+        calc(var(--lightness) + 1% - 22%)
+    );
+    
+    /*    светлый оттенок hsl(207, 57%, 76%);    */
+    --light_darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56% + 13%),
+        calc(var(--lightness) + 1% + 27%)
+    );
+    
+    /*    суперсветлый оттенок hsl(207, 56%, 84%);    */
+    --highlight_darkorange: hsl(
+        calc(var(--hue) - 174),
+        calc(var(--saturation) + 56% + 16%),
+        calc(var(--lightness) + 1% + 35%)
+    );
+}
+/*палитра сайта:
+1) var(--steelblue) steelblue - steelblue
+2) var(--dark_steelblue) #174a75 - темный steelblue
+3) var(--light_steelblue) #9fc4e5 - светлый steelblue
+4) var(--highlight_steelblue) #c0d8ed - очень светлый steelblue
+5) var(--darkorange) darkorange - darkorange
+6) var(--dark_darkorange) #8f4f00 - темный darkorange
+7) var(--light_darkorange) #ffca8a - светлый darkorange
+8) var(--highlight_darkorange) #ffddb3 - очень светлый darkorange
+*/
+
+

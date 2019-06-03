@@ -1,0 +1,371 @@
+﻿/*палитра сайта:
+1) var(--steelblue) steelblue - steelblue
+2) var(--dark_steelblue) #174a75 - темный steelblue
+3) var(--light_steelblue) #9fc4e5 - светлый steelblue
+4) var(--highlight_steelblue) #c0d8ed - очень светлый steelblue
+5) var(--darkorange) darkorange - darkorange
+6) var(--dark_darkorange) #8f4f00 - темный darkorange
+7) var(--light_darkorange) #ffca8a - светлый darkorange
+8) var(--highlight_darkorange) #ffddb3 - очень светлый darkorange
+*/
+
+
+/*мобильный дизайн*/
+@media (max-device-width: 870px){
+    .hotel_container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2em;
+        font-family: arial;
+        font-size: 2.5em;
+    }
+    .hotel_plate{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 3em;
+    }
+    .hotel_photo{
+        grid-column:1/4;
+        grid-row: 1/2;
+    }
+    .description{
+        display: none;
+    }
+    .room_type{
+        display: none;
+    }
+    .food_type{
+        display: none;
+    }
+    .hotel_cost{
+        grid-column:1/2;
+        grid-row: 2/3;
+    }
+    .hotel_stars{
+        display: none;
+    }
+    .hotel_name{
+        grid-column:2/3;
+        grid-row: 2/3;
+    }
+    .hotel_type{
+        display: none;
+    }
+    .distance_to_beach{
+        display: none;
+    }
+    .recommended_for{
+        display: none;
+    }
+    .to_book{
+        grid-column:3/4;
+        grid-row: 2/3;
+    }
+    .close{
+        display: none;
+    }
+    
+    /*цвета*/
+    .to_book a{
+        color: green;
+    }
+    
+    /*шрифты*/
+    .hotel_cost{
+        font-weight: bold;
+    }
+    .hotel_name{
+        font-weight: bold;
+    }
+    .to_book a{
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /*габариты*/
+        .hotel_cost{
+        padding-left: 0.5em;
+        padding-top: 1em;
+    }
+        .hotel_name{
+        padding-top: 1em;
+    }
+        .to_book{
+        padding-top: 1em;
+    }
+        .to_book a{
+        padding: 0.5em;
+    }
+    /*другое*/
+        .hotel_photo img{
+        width: 100%;
+    }
+        .to_book a{
+        border:solid green 3px;
+        border-radius: 10px;
+    }
+}
+
+
+/*мобильный дизайн в анимации (класс .rising придаётся из server.js)*/
+@media (max-device-width: 870px){
+    .hotel_container.rising{
+        display: grid;
+        grid-template-columns:1fr;/*одна колонка */
+    }
+    .hotel_plate.rising{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:auto auto; /*первая строка узкая (close), вторая - auto, чтобы поместилась карусель*/
+        grid-gap:1em;
+    }
+    .hotel_photo.rising{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    .description.rising{
+        display: block;
+        grid-column: 1/3;
+        grid-row: 7;
+    }
+    .room_type.rising{
+        display: block;
+        grid-column: 1/2;
+        grid-row: 4;
+    }
+    .food_type.rising{
+        display: block;
+        grid-column: 2/3;
+        grid-row: 4;
+    }
+    .hotel_cost.rising{
+        grid-column: 1/2;
+        grid-row: 6;
+    }
+    .hotel_stars.rising{
+        display: block;
+        grid-column: 2/3;
+        grid-row: 3;
+    }
+    .hotel_name.rising{
+        grid-column: 1/2;
+        grid-row: 3;
+    }
+    .hotel_type.rising{
+        display: block;
+        grid-column: 2/3;
+        grid-row: 6;
+    }
+    .distance_to_beach.rising{
+        display: block;
+        grid-column: 1/2;
+        grid-row: 5;
+    }
+    .recommended_for.rising{
+        display: block;
+        grid-column: 2/3;
+        grid-row: 5;
+    }
+    .to_book.rising{
+        grid-column: 1/2;
+        grid-row: 2;
+    }
+    .close.rising{
+        display: block;
+        grid-column: 2/3;
+        grid-row: 2;
+    }
+    
+    /*цвета*/
+    .close.rising{
+        color: red;
+        background-color: salmon;
+    }
+    .to_book.rising{
+        color: green;
+        background-color: lightgreen;
+    }
+    
+    /*шрифты*/
+    .close.rising, .to_book.rising a{
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+    .hotel_cost.rising, .hotel_name.rising{
+        font-weight: normal;
+    }
+    
+    /*другое*/
+    .close.rising, .to_book.rising{
+        border:solid white 3px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .to_book.rising a{
+        border:0px;
+    }
+
+    /*габариты*/
+
+    .close.rising, .to_book.rising{
+        padding: 1em;
+        margin: 0px;
+    }
+    .hotel_cost, .hotel_name{
+        padding: 0px;
+        margin: 0px;
+    }
+    
+
+    
+
+}
+
+
+/*десктоп-дизайн*/
+@media (min-device-width: 871px){
+    .hotel_container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 5px;
+    }
+    .hotel_plate{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 3em;
+    }
+    .hotel_photo{
+        grid-column:1/4;
+    }
+    .description{
+        grid-column:1/4;/*расположение grid-column-start и grid-column-end*/
+        display: none;
+    }
+    .room_type{
+        display: none;
+    }
+    .food_type{
+        display: none;
+    }
+    .hotel_cost{
+        
+    }
+    .hotel_stars{
+        display: none;
+    }
+    .hotel_name{
+        
+    }
+    .hotel_type{
+        display: none;
+    }
+    .distance_to_beach{
+        display: none;
+    }
+    .recommended_for{
+        display: none;
+    }
+    .to_book{
+        
+    }
+    .close{
+        display: none;
+    }
+    
+    /*цвета*/
+    .to_book a{color: black;background-color: var(--darkorange);}
+    /*шрифты*/
+    .hotel_plate *{font-family: arial;vertical-align: middle;}
+    .hotel_cost{font-weight: bold}
+    .hotel_name{font-weight: bold}
+    .to_book a{text-decoration: none;font-weight: bold;text-align: center;}
+    /*габариты*/
+    .to_book{width: 100%;height: 100%;}
+    .to_book a{width: 100%;height: 100%;padding: 0.5em;}
+    .hotel_cost{padding: 0.5em;}
+    .hotel_name{padding: 0.5em;}
+    /*другое*/
+    .to_book{display: block;}
+    .to_book a{display: block;box-sizing: border-box;}
+    .to_book a{border: solid black 2px;border-top: 0px}
+    .to_book a{border-radius:0em 0em 1em 1em}
+    .hotel_plate img{width: 100%;}
+
+}
+    
+
+/*десктоп-дизайн в анимации (класс .rising придаётся из server.js)*/
+@media (min-device-width: 871px){
+    .hotel_container.rising{
+        display: grid;
+        grid-template-columns:100vmin;/*одна колонка */
+        justify-content: center;
+    }
+    .hotel_plate.rising{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap:5px;
+    }
+    .hotel_photo.rising{
+        grid-column:1/2;grid-row: 1/11;/*1я колонка, с 1 по 11 строку*/
+    }
+    .description.rising{
+        display: block;
+        grid-column: 1/3;grid-row: 11;
+    }
+    .room_type.rising{
+        display: block;
+        grid-column: 2;grid-row: 4;
+    }
+    .food_type.rising{
+        display: block;
+        grid-column: 2;grid-row: 5;
+    }
+    .hotel_cost.rising{
+        grid-column: 2;grid-row: 2;
+    }
+    .hotel_stars.rising{
+        display: block;
+        grid-column: 2;grid-row: 6;
+    }
+    .hotel_name.rising{
+        grid-column: 2;grid-row: 3;
+    }
+    .hotel_type.rising{
+        display: block;
+        grid-column: 2;grid-row: 7;
+    }
+    .distance_to_beach.rising{
+        display: block;
+        grid-column: 2;grid-row: 8;
+    }
+    .recommended_for.rising{
+        display: block;
+        grid-column: 2;grid-row: 1;
+    }
+    .to_book.rising{
+        grid-column: 2;grid-row: 10;
+    }
+    .close.rising{
+        display: block;
+        grid-column: 2;grid-row: 9;
+        cursor: pointer;/*в отличие от .to_book, тут не ссылка, а скрипт. Поэтому надо изменить указатель мыши, чтобы юзер видел, что тут можно нажать*/
+    }
+    
+    /*цвета*/
+    .close.rising{background-color: var(--darkorange);}
+    /*шрифты*/
+    .close.rising{text-decoration: none;font-weight: bold;text-align: center;}
+    /*габариты*/
+    .close.rising{padding: 0.5em;}
+    /*другое*/
+    .close.rising{border-radius:1em 1em 1em 1em}
+    .close.rising{border: solid white 2px;border-top: 0px;}
+    .to_book.rising a, .close.rising{border: solid white 2px;border-radius:10px}
+    .hotel_plate.rising img{width: 100%;}
+}
+
+
+
+
+
