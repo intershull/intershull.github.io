@@ -1,0 +1,105 @@
+body{
+    padding: 0;margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    background: url(maket3-assets/fon.png) no-repeat center top / cover;
+    height: 700px;
+}
+
+div{box-sizing: border-box;}
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.logo{margin-top: 35px;}
+
+nav{float: right;margin-top: 70px;}
+.menu{display: block; padding: 0; margin: 0;}
+.menu li{float: left;display: block;}
+.menu li a{color: white; text-decoration: none;text-transform: uppercase;margin-left: 25px;font-size: 1.25em;}
+
+.header_text{float: left;}
+
+
+.header_text_1{display: block; font-size: 80px; color: white;font-weight: bold;text-transform: uppercase;margin-top: 140px;line-height: 40px;width: 460px;}
+.header_text_1 span{display: block;color: black}
+
+.header_text_2{font-size: 20px; color: white;font-weight: lighter;margin-top: 60px;line-height: 1.3em;width: 460px;}
+
+.forma{
+    background-color: white;width: 400px;height: 522px;float: right;margin-top: 165px;border-radius: 10px;box-shadow: 0.4em 0.4em 55px grey;
+    }
+
+.forma h2{font-size: 22px;font-weight: lighter;text-transform: uppercase;text-align: center;margin-top: 30px;margin-bottom: 35px;}
+
+.forma input[type=text]{display: block;font-size: 20px;text-transform: capitalize;width: 350px;height: 60px;border-radius: 5px;margin: 0 auto 0 auto;color: #b4b4b4;background-color: #ededed;margin-bottom: 15px;padding-left: 10px;box-sizing: border-box;border:none;}
+
+.forma input[type=checkbox]{background-color: #ededed;margin-left: 24px;margin-top: 15px;}
+.forma span{font-size: 20px;margin-left: 20px;}
+
+.forma input[type=button]{display: block;font-size: 22px;margin-top: 20px;width: 350px;height: 60px;border-radius: 5px;margin: 0 auto 0 auto;background-color: #b23328;margin-top: 20px;text-transform: uppercase;color: white;}
+
+
+
+#services h2{color: black;font-size: 50px;margin-top: 30px;font-weight: lighter;text-transform: uppercase;}
+#services h2 span{color: #b23328;font-size: 50px;}
+.service_block{width: 25%;float: left;margin-top: 50px;margin-bottom: 60px;}
+.service_block img{display: block;width: 164px;height: 164px;margin: 0 auto;}
+.service_block span{display: block;margin-top: 50px;text-align: center;width: 100%;font-size: 20px;}
+.services_footer{display: block;background-color: #1c162b;clear: both;margin-top: 0px;padding-left: 20px; padding-top: 34px;height: 125px;}
+.services_footer span{display: block;float: left; color: white;font-size: 20px;}
+.services_footer div{display: block;float: right; background-color: #aa281b;color: white;height: 65px; border-radius: 5px; ;font-size: 22px; text-align: center; width: 270px; line-height: 3em; text-transform: uppercase;}
+
+
+#call_pricing{background-color: #eeeeee;height: 600px;border: solid #eeeeee 1px;}
+
+#call_pricing h2{font-size: 50px;text-transform: uppercase;text-align: center;margin: 60px;}
+
+#call_pricing .tarif{float: right;width: 318px; margin-left: 15px;background-color: white;border-radius: 10px;}
+
+#call_pricing .tarif_name{margin-top: 38px;margin-bottom: 30px; font-size: 22px;text-transform: capitalize;text-align: center;
+}
+
+#call_pricing .popular{width: 93px;height: 93px;background-color: green;margin-top: -93px;border-top-left-radius: 10px;
+background-image: linear-gradient(-45deg, white, white 50%, #aa281b 50%, #aa281b);
+font-size: 16px;text-transform: none;color: black;
+}
+
+#call_pricing .popular span{display: block; transform: rotate(-45deg);margin-right: -30px;text-align: left;}
+
+#call_pricing .tarif_cost{font-size: 60px;color: #aa281b;text-align: center;text-transform: uppercase;font-weight: bolder;margin-bottom: 30px;}
+#call_pricing .tarif_list{font-size: 20px;text-align: center;line-height: 30px;margin-bottom: 35px;}
+#call_pricing .tarif_button{width: 200px;height: 50px;font-size: 22px;color: white;text-align: center;text-transform: uppercase;background-color: #aa281b;margin: 0 auto;line-height: 50px;border-radius: 5px;}
+
+
+
+#testimonial{margin-top: 100px;}
+#testimonial .testimonial{width: 50%;float: left;}
+#testimonial .gallery{width: 42%;float: right;}
+
+.testimonial h2{font-size: 50px;text-transform: uppercase;text-align: center;color:black;margin-bottom: 65px;}
+.gallery h2{font-size: 50px;text-transform: uppercase;text-align: center;color:#aa281b;margin-bottom: 65px;}
+
+
+.testimonial .author{height: 200px;}
+
+.testimonial .text{width: 390px;height: 133px; font-size: 20px;background-color: #eeeeee;border-radius: 10px;}
+
+.testimonial img{float: right;margin-top: -130px;}
+
+.gallery p{font-size: 20px;text-transform: uppercase;text-align: center;text-decoration: underline;}
+
+footer{clear: both; background-color: #19162b; height: 180px;border: solid #19162b 1px;}
+
+footer .about{float: left; font-size: 20px;color: white;margin-top: 80px;margin-left: 0px;}
+footer .about span{color: #aa281b;}
+
+footer .automotive{float: right; font-size: 60px; margin-top: 50px;margin-right: 0px;color: #aa281b;}
+
+
+
+
