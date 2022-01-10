@@ -1,0 +1,150 @@
+program dragon;
+var
+  dragon_attack_type:string;
+  my_attack_type:string;
+  dragon_life:integer;
+  my_life:integer;
+  choise:string;
+  
+{приветствие}
+procedure Hello;
+begin
+  writeln('Добро пожаловать на битву с Драконом! (играть нужно на английской раскладке)');
+  write('В игре есть три действия:');
+  write(' 1. b - отскочить ');
+  write(' 2. c - прикрыться ');
+  writeln(' 3. a - атаковать');
+  writeln('Удачи!');
+  writeln(' ');
+end;
+
+{Задаём свою реакцию на атаку дракона}
+procedure My_Attack;
+begin
+  write(' реагируй: ');
+  readln(my_attack_type);
+  if my_attack_type='b' then
+    my_attack_type:='отскочил'
+  else
+    if my_attack_type='c' then
+      my_attack_type:='прикрылся'
+    else
+      if my_attack_type='a' then
+        my_attack_type:='атаковал'
+      else
+        begin
+        write('неверная клавиша');
+        My_Attack;
+        end;
+end;
+
+{Задаём атаку дракона}
+procedure Dragon_Attack;
+begin
+  if random(3)=0 then dragon_attack_type:='накинулся с когтями'
+  else
+    if random(3)=1 then dragon_attack_type:='дохнул огнём'
+    else
+      dragon_attack_type:='замешкался';
+  writeln('Дракон: ',dragon_attack_type,'!');
+end;
+
+{просчитываем результат стычки }
+procedure Clash_Result;
+begin
+  if (dragon_attack_type='накинулся с когтями') then
+    if my_attack_type='отскочил' then writeln('...пока ничья...')
+    else
+      if my_attack_type='прикрылся' then
+        begin
+        my_life:=my_life-1;
+        writeln('Я ранен!');
+        end
+      else
+        if my_attack_type='атаковал' then
+          begin
+          dragon_life:=dragon_life-1;
+          my_life:=my_life-1;
+          writeln('Дракон ранен!','Я ранен!');
+          end;
+          
+  if (dragon_attack_type='дохнул огнём') then
+    if my_attack_type='отскочил' then
+      begin
+      my_life:=my_life-1;
+      writeln('Я ранен!');
+      end
+    else
+      if my_attack_type='прикрылся' then
+        writeln('...пока ничья...')
+      else
+        if my_attack_type='атаковал' then
+          begin
+          dragon_life:=dragon_life-1;
+          my_life:=my_life-1;
+          writeln('Дракон ранен!','Я ранен!');
+          end;
+        
+  if (dragon_attack_type='замешкался') then
+    if my_attack_type='отскочил' then
+      writeln('...пока ничья...')
+    else
+      if my_attack_type='прикрылся' then
+        writeln('...пока ничья...')
+      else
+        if my_attack_type='атаковал' then
+          begin
+          dragon_life:=dragon_life-1;
+          writeln('Дракон ранен!');
+          end;
+          
+writeln('счёт: дракон',dragon_life,': я',my_life);
+end;
+
+{Задаём свой выбор}
+procedure Your_Choise;
+begin
+  write(' сделай выбор: ');
+  readln(choise);
+  if (choise<>'y') and (choise<>'n') then
+     begin
+       write('неверная клавиша');
+       Your_Choise;
+     end;
+end;
+
+{подводим итог }
+procedure Final;
+begin
+if (my_life=0) and(dragon_life=0) then writeln('Я погиб вместе с драконом...')
+else
+  if dragon_life=0 then writeln('Дракон мёртв! Победа!')
+  else
+    writeln('Поражение...');
+  
+write('Играть снова? нажми "y", если хочешь повторить или n, чтобы завершить игру.');
+Your_Choise;
+end;
+
+{Основной цикл игры}
+procedure Main;
+begin
+  dragon_life:=3;
+  my_life:=3;
+  Hello;
+  while (dragon_life>0)and(my_life>0) do
+    begin
+      Dragon_Attack;
+      My_Attack;
+      Clash_Result;
+    end;
+  Final;
+  if choise='y' then
+    Main
+  else
+    write('Спасибо за игру!');
+end;
+
+begin
+  Main;
+end.
